@@ -72,7 +72,7 @@
                         <input type="text" class="form-control ms-3" placeholder="City" aria-label="City" name="city">
                     </div>
                     <div class="col-sm"id="eight">
-                        <input type="text" class="form-control" placeholder="State" aria-label="State">
+                        <input type="text" class="form-control" name="state" placeholder="State" aria-label="State">
                     </div>
                     <div class="col-sm me-3" id="ninet">
                         <input type="text" class="form-control"  placeholder="Zip" aria-label="Zip" name="zip">
