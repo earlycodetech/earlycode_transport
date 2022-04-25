@@ -48,7 +48,8 @@
                 </ul>
                 <ul class="nav-btn mt-3">
                         <a href="auth" class="btn btn-sm btn-outline-dark px-5 py-2 rounded-pill text-light mx-0 my-0" type="button">Sign Up</a>
-                   
+                        <a href="login" class="btn btn-sm btn-outline-dark px-5 py-2 rounded-pill text-light mx-0 my-0" type="button">Login</a>
+
                 </ul>
 
                
