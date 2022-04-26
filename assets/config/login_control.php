@@ -26,7 +26,7 @@
             if (password_verify($password,$returnedPassword)) {
                $_SESSION['id'] = $row['id'];
 
-               $_SESSION['successmessage'] = "Welcome to your Dashboard ".$row['first_name'];;
+               $_SESSION['successmessage'] = "Welcome to your dashboard ".$row['first_name'];;
                header('Location: ../../portal/dashboard');
 
             }else{

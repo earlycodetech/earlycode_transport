@@ -4,47 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Early Code Transport</title>
+    <title>Dashboard | ECTransit</title>
+    <link rel="shortcut icon" href="../assets/img/earlycode_logo.jpg">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/css/all.css">
 </head>
 <body>
+
+    <!-- DASHBOARD NAV -->
     <section>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <img src="../assets/img/earlycode_logo.jpg" width="70px" alt="">
+              <a class="navbar-brand fs-2 ms-3 fw-bold text-warning" href="#">EarlyCode Transit</a>
+              <span class="span-text" style="position: absolute; top: 0; margin-left: 150px; margin-top: 50px; color: whitesmoke;">....lets take you round the world safely</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold ms-3  text-light" href="#">OUR SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold ms-3 text-light" href="#">CONTACT US</a>
+                  </li>       
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn btn-oultine-light " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     ACCOUNT
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="../assets/config/logout">Log-out</a></li>
+    
+                    </ul>
+                  </li>
                 </ul>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../assets/config/logout.php">Log Out</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              </div>
             </div>
-        </div>
-        </nav>
+          </nav>
     </section>
+    <section class="section" style="background-color: whitesmoke;">
+    <div style="display: flex; gap: 20px;">
+            <div style="background-color: rgb(85, 20, 20);">
+                    <div class="ps-2 pe-3 pt-5">
+                      <ul style="list-style: none;">
+                        <li  style="margin-left: 0;">
+                        <a href="dashboard" class="card-link text-light text-decoration-none" style=" padding-top: 5px; padding-bottom: 5px; padding-right: 90px; margin-left: 0; background-color: rgb(99, 55, 55);"><i class="fas fa-tachometer-alt me-1 ps-1"></i> Dashboard</a></li>
+                        <li class="mt-4"><a href="profile" class="card-link text-light text-decoration-none"><i class="fas fa-user"></i> Profile</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-history"></i> History</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-wallet"> </i>  E-wallet</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-portrait"></i> Process Driver's ID</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-user-check"></i> Validate ID</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-bus-alt"></i> Hire a Vehicle</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-link"></i> Referral</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-lock"></i> Reset Password</a></li>
+                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-sign-out-alt"></i> Log-out</a></li>
+                      </ul>
+                    </div>
+              </div>
+
+
+
 
    
