@@ -29,4 +29,16 @@
         }
     }
 
-
+    function adminAuth(){
+        if ($_SESSION['role'] !== 'admin') {
+            header('Location: dashboard');
+        }
+    }
+    function disabled(){
+        if ($_SESSION['userStatus'] === 'disabled') {
+            header('Location: ../login');
+            session_unset();
+            session_destroy();
+            $_SESSION['errormessage'] = "Your account is current suspended please contact support";
+        }
+    }

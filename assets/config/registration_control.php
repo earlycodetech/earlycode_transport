@@ -19,6 +19,7 @@
         $state = $_POST['state'];
         $zip = $_POST['zip'];
         $phone = $_POST['phone'];
+        $role = 'user';
         $date = date('Y-m-d');
 
         // Check the password length
@@ -34,13 +35,13 @@
             // Encrypt our password
             $password = password_hash($password, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO users(first_name,middle_name,last_name,gender,dob,email,user_password,user_address,city,user_state,zip_code,phone,date_created) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO users(first_name,middle_name,last_name,gender,dob,email,user_password,user_address,city,user_state,zip_code,phone,user_role,date_created) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             // Initialise Connection 
             $stmt = mysqli_stmt_init($connection);
             // Prepare Statement
             mysqli_stmt_prepare($stmt,$sql);
             // Bind Parameters
-            mysqli_stmt_bind_param($stmt,'sssssssssssss',$firstName,$middleName,$lastName,$gender,$dob,$email,$password,$address,$city,$state,$zip,$phone,$date);
+            mysqli_stmt_bind_param($stmt,'ssssssssssssss',$firstName,$middleName,$lastName,$gender,$dob,$email,$password,$address,$city,$state,$zip,$phone,$role,$date);
             // Execute Statement
             if (mysqli_stmt_execute($stmt)) {
                 $_SESSION['successmessage'] = "Registration Successfull";

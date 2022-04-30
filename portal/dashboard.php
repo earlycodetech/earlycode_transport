@@ -3,8 +3,9 @@
     require_once '../assets/config/db-connect.php';
 
     require_once '../assets/includes/sessions.php';
-    require_once '../assets/includes/portal_header.php';
+    disabled();
     auth();
+    require_once '../assets/includes/portal_header.php';
     $id =  $_SESSION['id'];
 ?>
 
@@ -18,6 +19,7 @@
 <!-- DASHBOARD BODY -->
 <div>
                 <h5 class="mt-2 fs-3 fw-b text-secondary">DASHBOARD</h5>
+              <?php if ($_SESSION['role']  !== 'admin') { ?>
                 <div class="card ms-5 shadow" style="min-width: 60rem; height: max-content;">
                 <?php
                     echo successMessage();
@@ -105,6 +107,57 @@
                         </div>
                     </div>
               </div>
+              <?php }else{ //ADMIN DESIGN ?>
+                <div class="card ms-5 p-2 shadow" style="min-width: 60rem; height: max-content;">
+                <?php
+                    echo successMessage();
+                    echo errorMessage();
+                ?>
+                <div class="d-flex justify-content-end">
+                  <div class="card p-3 shadow w-25">
+                    <h5><i class="fas text-primary fa-id-card"></i> Total users</h5>
+
+                    <h5 class="text-center">
+                      <?php 
+                        $sql = "SELECT * FROM users WHERE user_role = 'user' OR first_name = 'Chris' ORDER BY id DESC LIMIT 0,3";
+                        $query = mysqli_query($connection,$sql);
+                        echo mysqli_num_rows($query);
+                      ?>
+                      
+                    </h5>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col"><i class="fas fa-box"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php while($row = mysqli_fetch_assoc($query)){ ?>
+                      <tr>
+                        <th scope="row"><i class="fas fa-user"></i></th>
+                        <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['phone']; ?></td>
+                        <td>
+                          <a href="user-details?id=<?php echo $row['id']; ?>" class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+              <?php } ?>
 
 </section>
 <script src="../assets/js/bootstrap.bundle.min.js"></script>

@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="../assets/img/earlycode_logo.jpg">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/css/all.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 </head>
 <body>
 
