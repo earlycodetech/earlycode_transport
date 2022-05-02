@@ -35,14 +35,12 @@
                          if (!empty($img)) {
                            echo "$img?".mt_rand();
                          }else{
-                           echo 'user.png';
+                           $img = 'user.png';
+                           echo $img;
                          }
-                      ?>" alt="" style="height: 150px; width: 150px; border-radius: 50%;">
-                      <form action="../assets/config/update_control.php" method="post" class="ms-3" enctype="multipart/form-data">
-                    </label>
-                        <input type="file" name="img" id="image" class="form-control d-none">
-                        <button type="submit" name="updatePicture" class="btn btn-outline-primary mt-3">Upload</button>
-                      </form>
+                      ?>" alt="" style="height: 150px; width: 150px; border-radius: 50%;"><br>
+                      
+                        <a href="../assets/img/profile_pic/<?php echo $img;?>" download  class="btn btn-outline-primary mt-3">Download</a>
                 </div>
                     <div class="row">
                       <form action="../assets/config/update_control.php" method="post">

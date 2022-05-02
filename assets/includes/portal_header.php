@@ -53,11 +53,16 @@
                         <li  style="margin-left: 0;">
                         <a href="dashboard" class="card-link text-light text-decoration-none" style=" padding-top: 5px; padding-bottom: 5px; padding-right: 90px; margin-left: 0; background-color: rgb(99, 55, 55);"><i class="fas fa-tachometer-alt me-1 ps-1"></i> Dashboard</a></li>
                         <li class="mt-4"><a href="profile" class="card-link text-light text-decoration-none"><i class="fas fa-user"></i> Profile</a></li>
+                        <?php if($_SESSION['role'] == 'admin') {?>
+                          <li class="mt-4"><a href="route" class="card-link text-light text-decoration-none"><i class="fas fa-map-marker-alt"></i> Create New Route</a></li>
+                        <?php } ?>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-history"></i> History</a></li>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-wallet"> </i>  E-wallet</a></li>
+                        <?php if($_SESSION['role'] == 'driver') {?>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-portrait"></i> Process Driver's ID</a></li>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-user-check"></i> Validate ID</a></li>
-                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-bus-alt"></i> Hire a Vehicle</a></li>
+                        <?php } ?>
+                        <li class="mt-4"><a href="route" class="card-link text-light text-decoration-none"><i class="fas fa-bus-alt"></i> Hire a Vehicle</a></li>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-link"></i> Referral</a></li>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-lock"></i> Reset Password</a></li>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-sign-out-alt"></i> Log-out</a></li>
