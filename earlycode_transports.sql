@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2022 at 07:06 PM
+-- Generation Time: May 03, 2022 at 06:37 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -20,6 +20,55 @@ SET time_zone = "+00:00";
 --
 -- Database: `earlycode_transports`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booked_routes`
+--
+
+CREATE TABLE `booked_routes` (
+  `id` int(11) NOT NULL,
+  `userid` varchar(11) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `booked_route` varchar(30) NOT NULL,
+  `no_of_seats` varchar(30) NOT NULL,
+  `date_of_departure` varchar(30) NOT NULL,
+  `booking_status` varchar(50) NOT NULL,
+  `date_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booked_routes`
+--
+
+INSERT INTO `booked_routes` (`id`, `userid`, `full_name`, `booked_route`, `no_of_seats`, `date_of_departure`, `booking_status`, `date_created`) VALUES
+(5, '2', 'Mary Papi Chulo', 'Lagos', '6', '2022-05-12', '<i class=\"text-danger\">Trip Ended</i>', '2022-05-03 05:03:40'),
+(6, '2', 'Mary Papi Chulo', 'Lagos', '5', '2022-05-13', 'pending...', '2022-05-03 05:08:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transport_route`
+--
+
+CREATE TABLE `transport_route` (
+  `id` int(11) NOT NULL,
+  `route_name` varchar(100) NOT NULL,
+  `route_price` varchar(30) NOT NULL,
+  `route_status` varchar(15) NOT NULL,
+  `available_seats` varchar(10) NOT NULL,
+  `date_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transport_route`
+--
+
+INSERT INTO `transport_route` (`id`, `route_name`, `route_price`, `route_status`, `available_seats`, `date_created`) VALUES
+(1, 'Lagos', '10000', 'Available', '11', '2022-05-02 05:04:46'),
+(2, 'Abuja', '20000', 'Available', '16', '2022-05-02 05:17:58'),
+(3, 'Asaba', '5000', 'Available', '16', '2022-05-02 05:18:11');
 
 -- --------------------------------------------------------
 
@@ -54,13 +103,25 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `gender`, `dob`, `email`, `user_password`, `user_address`, `city`, `user_state`, `zip_code`, `phone`, `prof_pic`, `user_role`, `password_trial`, `user_status`, `date_created`) VALUES
 (1, 'John', 'test', 'Wick', 'Male', '2022-04-14', 'tester@gmail.com', '$2y$10$LSb8ObPmkB8RbA55aqF3oemDEXCNcLAhu5eHqu/wISmDr53PdCQye', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', 'profile1.jpg', 'admin', 0, 'enabled', '2022-04-23'),
-(2, 'Mary', 'Mad', 'Papi Chulo', 'Female', '2022-04-06', 'mary@gmail.com', '$2y$10$ScaId6lAsHzPLfYUFc.bEePFbLnn6Gr27UyuilUhU9KtBwhPtxJ7u', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '08124423122', 'profile2.jpg', 'user', 0, '', '2022-04-25'),
+(2, 'Mary', 'Mad', 'Papi Chulo', 'Female', '2022-04-06', 'mary@gmail.com', '$2y$10$ScaId6lAsHzPLfYUFc.bEePFbLnn6Gr27UyuilUhU9KtBwhPtxJ7u', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '08124423122', 'profile2.jpg', 'driver', 0, '', '2022-04-25'),
 (3, 'Chris', 'test', 'Graham', 'Male', '2022-04-27', 'chrisgraham2625@gmail.com', '$2y$10$/L4Ad6kdgxRv7oNynjmBr.SA4Wi6xLQaRfcWVA6KpKgphxjjpWXpq', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', '', 'user', 0, '', '2022-04-30'),
 (5, 'Michael', 'test', 'Graham', 'Male', '2022-04-27', 'michael@gmail.com', '$2y$10$/L4Ad6kdgxRv7oNynjmBr.SA4Wi6xLQaRfcWVA6KpKgphxjjpWXpq', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', '', 'user', 0, '', '2022-04-30');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `booked_routes`
+--
+ALTER TABLE `booked_routes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `transport_route`
+--
+ALTER TABLE `transport_route`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -71,6 +132,18 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booked_routes`
+--
+ALTER TABLE `booked_routes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `transport_route`
+--
+ALTER TABLE `transport_route`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

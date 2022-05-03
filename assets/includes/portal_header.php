@@ -23,6 +23,14 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <form action="dashboard" method="post">
+                  <div class="d-flex">
+                    <input type="text" name="search" class="form-control rounded-0">
+                    <button name="searchBtn" class="btn btn-outline-warning rounded-0">
+                        <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
                 <ul class="navbar-nav">
                   <li class="nav-item">
                     <a class="nav-link fw-bold ms-3  text-light" href="#">OUR SERVICES</a>
@@ -55,8 +63,8 @@
                         <li class="mt-4"><a href="profile" class="card-link text-light text-decoration-none"><i class="fas fa-user"></i> Profile</a></li>
                         <?php if($_SESSION['role'] == 'admin') {?>
                           <li class="mt-4"><a href="route" class="card-link text-light text-decoration-none"><i class="fas fa-map-marker-alt"></i> Create New Route</a></li>
-                        <?php } ?>
-                        <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-history"></i> History</a></li>
+                          <?php } ?>
+                        <li class="mt-4"><a href="booked-routes" class="card-link text-light text-decoration-none"><i class="fas fa-history"></i> Booked Routes</a></li>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-wallet"> </i>  E-wallet</a></li>
                         <?php if($_SESSION['role'] == 'driver') {?>
                         <li class="mt-4"><a href="#" class="card-link text-light text-decoration-none"><i class="fas fa-portrait"></i> Process Driver's ID</a></li>

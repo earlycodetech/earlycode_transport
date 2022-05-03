@@ -119,8 +119,17 @@
 
                     <h5 class="text-center">
                       <?php 
-                        $sql = "SELECT * FROM users WHERE user_role = 'user' OR first_name = 'Chris' ORDER BY id DESC LIMIT 0,3";
+                        if (isset($_POST['searchBtn'])) {
+                          $search = $_POST['search'];
+                          $sql = "SELECT * FROM users WHERE first_name LIKE '%$search%' OR middle_name LIKE '%$search%' OR last_name LIKE '%$search%'";
+                        }else{
+                          $sql = "SELECT * FROM users WHERE user_role = 'user' OR first_name = 'Chris' ORDER BY id DESC LIMIT 0,3";
+                        }
                         $query = mysqli_query($connection,$sql);
+                        $message = "";
+                        if (mysqli_num_rows($query) < 1) {
+                          $message = "No User Found";
+                        }
                         echo mysqli_num_rows($query);
                       ?>
                       
@@ -140,7 +149,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php while($row = mysqli_fetch_assoc($query)){ ?>
+                      <?php
+                        
+                        while($row = mysqli_fetch_assoc($query)){ 
+                          
+                        ?>
                       <tr>
                         <th scope="row"><i class="fas fa-user"></i></th>
                         <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
@@ -152,7 +165,7 @@
                           </a>
                         </td>
                       </tr>
-                      <?php } ?>
+                      <?php }echo $message; ?>
                     </tbody>
                   </table>
                 </div>
