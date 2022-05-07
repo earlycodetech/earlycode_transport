@@ -14,6 +14,7 @@
                 <input type="password" name="password" placeholder="Password*" class="form-control" required>
 
                 <button type="submit" name="login" class="btn btn-outline-primary my-2"> Login</button>
+                <a href="password-reset" class="nav-link my-2">Forgot Password? </a>
             </form>
         </div>
     </main>

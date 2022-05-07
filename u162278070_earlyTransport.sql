@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 03, 2022 at 06:37 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 07, 2022 at 05:16 PM
+-- Server version: 10.5.13-MariaDB-cll-lve
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `earlycode_transports`
+-- Database: `u162278070_earlyTransport`
 --
 
 -- --------------------------------------------------------
@@ -94,6 +94,7 @@ CREATE TABLE `users` (
   `user_role` varchar(15) NOT NULL,
   `password_trial` int(5) NOT NULL,
   `user_status` varchar(15) NOT NULL,
+  `password_reset` varchar(30) NOT NULL,
   `date_created` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -101,11 +102,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `gender`, `dob`, `email`, `user_password`, `user_address`, `city`, `user_state`, `zip_code`, `phone`, `prof_pic`, `user_role`, `password_trial`, `user_status`, `date_created`) VALUES
-(1, 'John', 'test', 'Wick', 'Male', '2022-04-14', 'tester@gmail.com', '$2y$10$LSb8ObPmkB8RbA55aqF3oemDEXCNcLAhu5eHqu/wISmDr53PdCQye', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', 'profile1.jpg', 'admin', 0, 'enabled', '2022-04-23'),
-(2, 'Mary', 'Mad', 'Papi Chulo', 'Female', '2022-04-06', 'mary@gmail.com', '$2y$10$ScaId6lAsHzPLfYUFc.bEePFbLnn6Gr27UyuilUhU9KtBwhPtxJ7u', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '08124423122', 'profile2.jpg', 'driver', 0, '', '2022-04-25'),
-(3, 'Chris', 'test', 'Graham', 'Male', '2022-04-27', 'chrisgraham2625@gmail.com', '$2y$10$/L4Ad6kdgxRv7oNynjmBr.SA4Wi6xLQaRfcWVA6KpKgphxjjpWXpq', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', '', 'user', 0, '', '2022-04-30'),
-(5, 'Michael', 'test', 'Graham', 'Male', '2022-04-27', 'michael@gmail.com', '$2y$10$/L4Ad6kdgxRv7oNynjmBr.SA4Wi6xLQaRfcWVA6KpKgphxjjpWXpq', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', '', 'user', 0, '', '2022-04-30');
+INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `gender`, `dob`, `email`, `user_password`, `user_address`, `city`, `user_state`, `zip_code`, `phone`, `prof_pic`, `user_role`, `password_trial`, `user_status`, `password_reset`, `date_created`) VALUES
+(1, 'John', 'test', 'Wick', 'Male', '2022-04-14', 'admin@earlyTransport.com', '$2y$10$LSb8ObPmkB8RbA55aqF3oemDEXCNcLAhu5eHqu/wISmDr53PdCQye', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', 'profile1.jpg', 'admin', 0, 'enabled', '', '2022-04-23'),
+(2, 'Mary', 'Mad', 'Papi Chulo', 'Female', '2022-04-06', 'mary@gmail.com', '$2y$10$ScaId6lAsHzPLfYUFc.bEePFbLnn6Gr27UyuilUhU9KtBwhPtxJ7u', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '08124423122', 'profile2.jpg', 'driver', 0, '', '', '2022-04-25'),
+(3, 'Chris', 'test', 'Graham', 'Male', '2022-04-27', 'chrisgraham2625@gmail.com', '$2y$10$twg2vBy2ilo8PCTqM8QWOeY24vAp4wdd/ajDXL1sTk2r5TZUudJfW', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', '', 'user', 0, '', 'SET', '2022-04-30'),
+(5, 'Michael', 'test', 'Graham', 'Male', '2022-04-27', 'michael@gmail.com', '$2y$10$/L4Ad6kdgxRv7oNynjmBr.SA4Wi6xLQaRfcWVA6KpKgphxjjpWXpq', '4 Kado Estates Abuja', 'FCT', 'ABUJA', '900108', '+2348124423122', '', 'user', 0, '', '', '2022-04-30'),
+(6, 'goodness ', 'jimmy ', 'me ', 'Male', '2022-05-10', 'good2006rocks@gmail.com', '$2y$10$0PQKKRB.WYDt20.nTHJ50.v9yQ0eqcEkcfsq.2MvcD9xyuMRpmG7.', '', '', '', '', '', '', 'user', 0, '', '', '2022-05-07');
 
 --
 -- Indexes for dumped tables
@@ -149,7 +151,7 @@ ALTER TABLE `transport_route`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

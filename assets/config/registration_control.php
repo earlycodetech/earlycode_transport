@@ -22,8 +22,14 @@
         $role = 'user';
         $date = date('Y-m-d');
 
+        $sql = "SELECT email FROM users WHERE email = '$email'";
+        $query = mysqli_query($connection,$sql);
+        if (mysqli_num_rows($query) < 1) {
+            $_SESSION['errormessage'] = "This email already exist ";
+            header('Location: ../../auth');
+        }
         // Check the password length
-        if(strlen($password) < 6){
+        elseif(strlen($password) < 6){
             $_SESSION['errormessage'] = "Password must be greater than 6 characters ";
             header('Location: ../../auth');
         }

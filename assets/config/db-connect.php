@@ -1,8 +1,8 @@
 <?php
     $server = 'localhost';
-    $username = 'root';
-    $password = '';
-    $dataBase = 'earlycode_transports';
+    $username = 'u162278070_early';
+    $password = '3H=bad:Op';
+    $dataBase = 'u162278070_earlyTransport';
     $connection = mysqli_connect($server,$username,$password,$dataBase);
 
     if (!$connection) {
